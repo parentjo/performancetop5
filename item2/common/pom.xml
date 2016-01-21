@@ -14,4 +14,39 @@
         <version>1.0</version>
     </parent>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>biggerbytes.be</id>
+            <url>http://www.biggerbytes.be/maven2/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <properties>
+        <e4j.version>2016.1-SNAPSHOT</e4j.version>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>be.biggerbytes</groupId>
+                <artifactId>externalizer-maven-plugin</artifactId>
+                <version>2016.1-SNAPSHOT</version>
+                <!--<version>${e4j.version}</version>-->
+                <executions>
+                    <execution>
+                        <id>optimize-classes</id>
+                        <goals>
+                            <goal>externalize</goal>
+                            <goal>externalizeTest</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
